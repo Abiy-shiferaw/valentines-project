@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Be My Valentine? ❤️</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Will You Be My Valentine? ❤️</h1>
+        <img src="assets/flower.gif" alt="flower gif" class="fun-gif">
+        <p class="fun-message">Try saying NO!🤪 🐻💕</p>
+        <div class="buttons">
+            <button id="yes-btn">Yes</button>
+            <button id="no-btn">No</button>
+        </div>
+    </div>
+    <div id="surprise" class="hidden">
+        <h2>Yay! ❤️ I love you!</h2>
+        <p>You make my world so special! 💖</p>
+        <img src="assets/heart-heartbeat.gif" alt="Heart Animation">
+        <div id="confetti"></div>
+    </div>
+    <script>
+        document.getElementById('yes-btn').addEventListener('click', function() {
+            document.querySelector('.container').style.display = 'none';
+            let surprise = document.getElementById('surprise');
+            surprise.classList.remove('hidden');
+            surprise.style.display = 'block';
+            startHeartConfetti();
+        });
+
+        document.getElementById('no-btn').addEventListener('mouseover', function() {
+            this.style.position = 'absolute';
+            this.style.top = Math.random() * window.innerHeight + 'px';
+            this.style.left = Math.random() * window.innerWidth + 'px';
+            startLaughingConfetti();
+        });
+
+        function startHeartConfetti() {
+            const confettiContainer = document.getElementById("confetti");
+            confettiContainer.innerHTML = '';
+            for (let i = 0; i < 100; i++) {
+                let confetti = document.createElement("div");
+                confetti.classList.add("confetti-piece");
+                confetti.innerHTML = "❤️";
+                confetti.style.left = Math.random() * window.innerWidth + "px";
+                confetti.style.animationDuration = (Math.random() * 3 + 2) + "s";
+                confettiContainer.appendChild(confetti);
+            }
+        }
+
+        function startLaughingConfetti() {
+            const confettiContainer = document.getElementById("confetti");
+            for (let i = 0; i < 10; i++) {
+                let laughingEmoji = document.createElement("div");
+                laughingEmoji.classList.add("laughing-confetti");
+                laughingEmoji.innerHTML = "😂";
+                laughingEmoji.style.left = Math.random() * window.innerWidth + "px";
+                laughingEmoji.style.top = Math.random() * window.innerHeight / 2 + "px";
+                confettiContainer.appendChild(laughingEmoji);
+                setTimeout(() => laughingEmoji.remove(), 5000);
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: pink;
+            overflow: hidden;
+        }
+        .container {
+            margin-top: 100px;
+        }
+        .fun-gif {
+            width: 250px;
+            margin-top: 20px;
+        }
+        .fun-message {
+            font-size: 20px;
+            font-weight: bold;
+            color: red;
+            margin-bottom: 20px;
+        }
+        .buttons {
+            margin-top: 20px;
+        }
+        button {
+            font-size: 20px;
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+        #yes-btn {
+            background-color: red;
+            color: white;
+        }
+        #no-btn {
+            background-color: gray;
+            color: white;
+            position: relative;
+        }
+        #surprise {
+            display: none;
+            margin-top: 50px;
+        }
+        .hidden {
+            visibility: hidden;
+        }
+        #confetti {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+        }
+        .confetti-piece, .laughing-confetti {
+            font-size: 20px;
+            position: absolute;
+            opacity: 0.9;
+            animation: fall linear infinite;
+        }
+        .laughing-confetti {
+            animation: fall 5s ease-out forwards;
+        }
+        @keyframes fall {
+            from { transform: translateY(-10px) rotate(0deg); }
+            to { transform: translateY(100vh) rotate(360deg); }
+        }
+    </style>
+</body>
+</html>
