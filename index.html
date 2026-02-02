@@ -4,134 +4,79 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Will You Be My Valentine? ❤️</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Quicksand:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Will You Be My Valentine? ❤️</h1>
-        <img src="assets/flower.gif" alt="flower gif" class="fun-gif">
-        <p class="fun-message">Try saying NO!🤪 🐻💕</p>
-        <div class="buttons">
-            <button id="yes-btn">Yes</button>
-            <button id="no-btn">No</button>
+
+    <!-- Floating hearts background -->
+    <div id="floating-hearts"></div>
+
+    <!-- Step 1: Opening envelope -->
+    <div id="step-envelope" class="step active">
+        <div class="envelope-wrapper">
+            <h2 class="intro-text">You have a special message...</h2>
+            <div class="envelope" id="envelope">
+                <div class="envelope-flap"></div>
+                <div class="envelope-body">
+                    <div class="letter-preview">💌</div>
+                </div>
+            </div>
+            <p class="tap-hint">tap the envelope</p>
         </div>
     </div>
-    <div id="surprise" class="hidden">
-        <h2>Yay! ❤️ I love you!</h2>
-        <p>You make my world so special! 💖</p>
-        <img src="assets/heart-heartbeat.gif" alt="Heart Animation">
-        <div id="confetti"></div>
+
+    <!-- Step 2: Reasons I love you slideshow -->
+    <div id="step-reasons" class="step">
+        <div class="reasons-container">
+            <h2 class="reasons-title">Before I ask you something...</h2>
+            <div class="reason-card" id="reason-card">
+                <span class="reason-number" id="reason-number">#1</span>
+                <p class="reason-text" id="reason-text"></p>
+            </div>
+            <div class="reason-dots" id="reason-dots"></div>
+            <button class="btn-next" id="btn-next-reason">Next ❤️</button>
+        </div>
     </div>
-    <script>
-        document.getElementById('yes-btn').addEventListener('click', function() {
-            document.querySelector('.container').style.display = 'none';
-            let surprise = document.getElementById('surprise');
-            surprise.classList.remove('hidden');
-            surprise.style.display = 'block';
-            startHeartConfetti();
-        });
 
-        document.getElementById('no-btn').addEventListener('mouseover', function() {
-            this.style.position = 'absolute';
-            this.style.top = Math.random() * window.innerHeight + 'px';
-            this.style.left = Math.random() * window.innerWidth + 'px';
-            startLaughingConfetti();
-        });
+    <!-- Step 3: The big question -->
+    <div id="step-question" class="step">
+        <div class="question-container">
+            <h1 class="question-title">Will You Be My Valentine?</h1>
+            <img src="assets/flower.gif" alt="flower gif" class="fun-gif">
+            <p class="fun-message">Try saying NO! 🤪 🐻💕</p>
+            <div class="buttons">
+                <button id="yes-btn" class="btn-yes">Yes!</button>
+                <button id="no-btn" class="btn-no">No</button>
+            </div>
+            <p class="no-counter hidden" id="no-counter"></p>
+        </div>
+    </div>
 
-        function startHeartConfetti() {
-            const confettiContainer = document.getElementById("confetti");
-            confettiContainer.innerHTML = '';
-            for (let i = 0; i < 100; i++) {
-                let confetti = document.createElement("div");
-                confetti.classList.add("confetti-piece");
-                confetti.innerHTML = "❤️";
-                confetti.style.left = Math.random() * window.innerWidth + "px";
-                confetti.style.animationDuration = (Math.random() * 3 + 2) + "s";
-                confettiContainer.appendChild(confetti);
-            }
-        }
+    <!-- Step 4: Celebration -->
+    <div id="step-celebration" class="step">
+        <div class="celebration-container">
+            <h2 class="celebrate-title" id="celebrate-title">Yay! ❤️</h2>
+            <p class="celebrate-subtitle">I knew you'd say yes!</p>
+            <img src="assets/heart-heartbeat.gif" alt="Heart Animation" class="heart-gif">
+            <p class="celebrate-message">You make every day feel like Valentine's Day 💖</p>
+            <div class="date-plan">
+                <h3>Our Valentine's Date Plan:</h3>
+                <ul>
+                    <li>🌹 Flowers just for you</li>
+                    <li>🍫 Your favorite chocolates</li>
+                    <li>🍝 Dinner at our spot</li>
+                    <li>🎬 Movie & cuddles</li>
+                </ul>
+            </div>
+        </div>
+    </div>
 
-        function startLaughingConfetti() {
-            const confettiContainer = document.getElementById("confetti");
-            for (let i = 0; i < 10; i++) {
-                let laughingEmoji = document.createElement("div");
-                laughingEmoji.classList.add("laughing-confetti");
-                laughingEmoji.innerHTML = "😂";
-                laughingEmoji.style.left = Math.random() * window.innerWidth + "px";
-                laughingEmoji.style.top = Math.random() * window.innerHeight / 2 + "px";
-                confettiContainer.appendChild(laughingEmoji);
-                setTimeout(() => laughingEmoji.remove(), 5000);
-            }
-        }
-    </script>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            background-color: pink;
-            overflow: hidden;
-        }
-        .container {
-            margin-top: 100px;
-        }
-        .fun-gif {
-            width: 250px;
-            margin-top: 20px;
-        }
-        .fun-message {
-            font-size: 20px;
-            font-weight: bold;
-            color: red;
-            margin-bottom: 20px;
-        }
-        .buttons {
-            margin-top: 20px;
-        }
-        button {
-            font-size: 20px;
-            padding: 10px 20px;
-            margin: 10px;
-            border: none;
-            cursor: pointer;
-            border-radius: 10px;
-        }
-        #yes-btn {
-            background-color: red;
-            color: white;
-        }
-        #no-btn {
-            background-color: gray;
-            color: white;
-            position: relative;
-        }
-        #surprise {
-            display: none;
-            margin-top: 50px;
-        }
-        .hidden {
-            visibility: hidden;
-        }
-        #confetti {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            pointer-events: none;
-        }
-        .confetti-piece, .laughing-confetti {
-            font-size: 20px;
-            position: absolute;
-            opacity: 0.9;
-            animation: fall linear infinite;
-        }
-        .laughing-confetti {
-            animation: fall 5s ease-out forwards;
-        }
-        @keyframes fall {
-            from { transform: translateY(-10px) rotate(0deg); }
-            to { transform: translateY(100vh) rotate(360deg); }
-        }
-    </style>
+    <!-- Confetti layer -->
+    <div id="confetti"></div>
+
+    <script src="script.js"></script>
 </body>
 </html>
