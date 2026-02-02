@@ -26,6 +26,15 @@ function toggleMusic() {
         btn.textContent = '🎵';
         btn.classList.add('playing');
         musicPlaying = true;
+
+        // Unlock the envelope after music starts
+        const envelope = document.getElementById('envelope');
+        const hint = document.querySelector('.tap-hint');
+        if (envelope.classList.contains('locked')) {
+            envelope.classList.remove('locked');
+            hint.textContent = 'now tap the envelope, fikre';
+            hint.classList.add('unlocked-hint');
+        }
     }
 }
 
@@ -106,8 +115,9 @@ function goToStep(stepId) {
 // ===== Step 1: Envelope =====
 function initEnvelope() {
     const envelope = document.getElementById('envelope');
+    envelope.classList.add('locked');
     envelope.addEventListener('click', function () {
-        startMusicOnInteraction();
+        if (this.classList.contains('locked')) return;
         this.classList.add('opened');
         setTimeout(() => {
             goToStep('step-reasons');
