@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Will You Be My Valentine? ❤️</title>
+    <title>For You, Nayo ❤️</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Quicksand:wght@300;400;600&display=swap" rel="stylesheet">
@@ -14,39 +14,44 @@
     <!-- Floating hearts background -->
     <div id="floating-hearts"></div>
 
+    <!-- Music toggle -->
+    <button id="music-toggle" class="music-btn" title="Toggle music">🔇</button>
+
     <!-- Step 1: Opening envelope -->
     <div id="step-envelope" class="step active">
         <div class="envelope-wrapper">
-            <h2 class="intro-text">You have a special message...</h2>
+            <h2 class="intro-text">Hey Hode, you have something special...</h2>
+            <div class="countdown" id="countdown"></div>
             <div class="envelope" id="envelope">
                 <div class="envelope-flap"></div>
                 <div class="envelope-body">
                     <div class="letter-preview">💌</div>
                 </div>
             </div>
-            <p class="tap-hint">tap the envelope</p>
+            <p class="tap-hint">tap the envelope, fikre</p>
         </div>
     </div>
 
     <!-- Step 2: Reasons I love you slideshow -->
     <div id="step-reasons" class="step">
         <div class="reasons-container">
-            <h2 class="reasons-title">Before I ask you something...</h2>
+            <h2 class="reasons-title">Nayo, before I ask you something...</h2>
             <div class="reason-card" id="reason-card">
                 <span class="reason-number" id="reason-number">#1</span>
                 <p class="reason-text" id="reason-text"></p>
+                <span class="typing-cursor" id="typing-cursor">|</span>
             </div>
             <div class="reason-dots" id="reason-dots"></div>
-            <button class="btn-next" id="btn-next-reason">Next ❤️</button>
+            <button class="btn-next hidden" id="btn-next-reason">Next ❤️</button>
         </div>
     </div>
 
     <!-- Step 3: The big question -->
     <div id="step-question" class="step">
         <div class="question-container">
-            <h1 class="question-title">Will You Be My Valentine?</h1>
+            <h1 class="question-title">Hode, Will You Be My Valentine?</h1>
             <img src="assets/flower.gif" alt="flower gif" class="fun-gif">
-            <p class="fun-message">Try saying NO! 🤪 🐻💕</p>
+            <p class="fun-message">Try saying NO, Nayo! 🤪 🐻💕</p>
             <div class="buttons">
                 <button id="yes-btn" class="btn-yes">Yes!</button>
                 <button id="no-btn" class="btn-no">No</button>
@@ -58,17 +63,24 @@
     <!-- Step 4: Celebration -->
     <div id="step-celebration" class="step">
         <div class="celebration-container">
-            <h2 class="celebrate-title" id="celebrate-title">Yay! ❤️</h2>
-            <p class="celebrate-subtitle">I knew you'd say yes!</p>
+            <h2 class="celebrate-title" id="celebrate-title">Yay, Fikre! ❤️</h2>
+            <p class="celebrate-subtitle">I knew you'd say yes, Hode!</p>
             <img src="assets/heart-heartbeat.gif" alt="Heart Animation" class="heart-gif">
-            <p class="celebrate-message">You make every day feel like Valentine's Day 💖</p>
+            <p class="celebrate-message">Nahomie, you make every day feel like Valentine's Day 💖</p>
+            <div class="love-letter">
+                <h3>A Little Letter for You</h3>
+                <p>Dear Nayo,</p>
+                <p>Every day with you feels like a gift I don't deserve but I'm so grateful for. You are my fikre, my hode, my everything. This Valentine's Day, I just want you to know — there's nobody else I'd rather be with. I love you more than words on a screen could ever say.</p>
+                <p class="letter-sign">Forever yours ❤️</p>
+            </div>
             <div class="date-plan">
                 <h3>Our Valentine's Date Plan:</h3>
                 <ul>
-                    <li>🌹 Flowers just for you</li>
+                    <li>🌹 Flowers just for you, Hode</li>
                     <li>🍫 Your favorite chocolates</li>
                     <li>🍝 Dinner at our spot</li>
                     <li>🎬 Movie & cuddles</li>
+                    <li>💌 And all my love, always</li>
                 </ul>
             </div>
         </div>
