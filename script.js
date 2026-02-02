@@ -118,12 +118,14 @@ function initEnvelope() {
 
 // ===== Step 2: Reasons Slideshow with Typing Effect =====
 const reasons = [
-    "Hode, your smile lights up my entire day — even the worst ones become beautiful because of you.",
-    "Nayo, the way you laugh at my terrible jokes makes me feel like I'm the funniest person alive.",
-    "Fikre, you always know exactly what to say when I need it most. You're my peace.",
-    "Every moment with you, Nahomie, feels like an adventure I never want to end.",
-    "You make me want to be a better man, Hode. Just by being you.",
-    "I thank God every day for putting you in my life, Nayo. You're my blessing. 🙏"
+    "Your smile is the first thing I think about when I wake up and the last thing on my mind before I fall asleep, Hode.",
+    "The way you love me even on the days I don't feel lovable — that's how I know this is real, Hode.",
+    "You don't just listen to me, you hear me. You see the parts of me I try to hide, and you love them anyway, Hode.",
+    "Every time I look at you I realize God really took His time. You're my answered prayer, Hode.",
+    "You make the ordinary feel sacred. A random Tuesday with you means more than anything else in this world, Hode.",
+    "When life gets heavy, you're the one who makes me feel like I can carry it. You are my strength, Hode.",
+    "I never knew what home felt like until I met you. Now home isn't a place — it's wherever you are, Hode.",
+    "You didn't just change my life, you gave it meaning. I love you endlessly, Fikre. 🙏"
 ];
 
 let currentReason = 0;
