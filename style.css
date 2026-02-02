@@ -160,7 +160,7 @@ body {
 }
 
 .tap-hint {
-    font-size: 0.9rem;
+    font-size: 1.3rem;
     color: rgba(255, 255, 255, 0.8);
     animation: fadeInUp 1.5s ease;
     letter-spacing: 2px;
